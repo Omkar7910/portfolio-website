@@ -2,6 +2,11 @@ import "./intro.scss";
 import Typewriter from "typewriter-effect";
 
 export default function Intro() {
+  const downloadCV = () => {
+    // Replace the URL with the actual path to your CV file
+    window.location.href = "assets/resume.pdf";
+  };
+
   return (
     <div className="intro" id="intro">
       <div className="left">
@@ -30,10 +35,25 @@ export default function Intro() {
               />
             </span>
           </h3>
+          <div className="buttons">
+            <button onClick={downloadCV}>Download CV</button>
+            <button onClick={() => (window.location.href = "#contact")}>
+              Contact Info
+            </button>
+          </div>
+          <div className="socials">
+            <a href="https://www.linkedin.com/in/omkar-patil-75793022a" target="_blank" rel="noopener noreferrer">
+              <img src="assets/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://github.com/Omkar7910"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/github.png" alt="GitHub" />
+            </a>
+          </div>
         </div>
-        <a href="#portfolio">
-          <img src="assets/down.png" alt="toggle-down" />
-        </a>
       </div>
     </div>
   );

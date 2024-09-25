@@ -29,6 +29,7 @@
 
     li {
       margin-bottom: 25px;
+
       a {
         font-size: inherit;
         color: inherit;
@@ -39,5 +40,43 @@
         font-weight: 500;
       }
     }
+  }
+}
+
+// Media Queries for Responsiveness
+
+// For small devices (phones)
+@media (max-width: 600px) {
+  .menu {
+    width: 100%;
+    right: -100%;
+  }
+
+  ul {
+    font-size: 20px; // Smaller font size for smaller screens
+  }
+}
+
+// For medium devices (tablets)
+@media (min-width: 601px) and (max-width: 1024px) {
+  .menu {
+    width: 250px; // Adjust the width for tablets
+    right: -250px;
+  }
+
+  ul {
+    font-size: 25px;
+  }
+}
+
+// For larger devices (desktops)
+@media (min-width: 1025px) {
+  .menu {
+    width: 300px; // Keep the original size for desktops
+    right: -300px;
+  }
+
+  ul {
+    font-size: 30px;
   }
 }

@@ -2,29 +2,34 @@ import { useState } from "react";
 import "./works.scss";
 
 export default function Works() {
+  const [projectUrls, setProjectUrls] = useState({
+    1: "https://flix2go.netlify.app",
+    2: "https://newsglobeog.netlify.app",
+  });
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
       id: "1",
-      icon: "./assets/mobile.png",
-      title: "Web Design",
+      icon: "./assets/globe.png",
+      title: "Flix2Go",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+      img: "https://github.com/user-attachments/assets/79717fb1-214d-4c10-97bc-4fdbaa4ce52d?auto=format&q=60&fit=max&w=930",
     },
     {
       id: "2",
       icon: "./assets/globe.png",
-      title: "Mobile Application",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: "https://i.pinimg.com/originals/e9/c9/2f/e9c92f7869d682a6fa5a97fb8a298f30.jpg",
-    },
-    {
-      id: "3",
-      icon: "./assets/writing.png",
-      title: "Branding",
+      title: "DailyGlobe",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
     },
+    // {
+    //   id: "3",
+    //   icon: "./assets/writing.png",
+    //   title: "Branding",
+    //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    //   img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
+    // },
   ];
 
   const handleClick = (way) => {
@@ -35,6 +40,8 @@ export default function Works() {
 
   return (
     <div className="works" id="works">
+      <p className="section__text__p1">Browse My Recent</p>
+      <h1 className="title">Projects</h1>
       <div
         className="slider"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
@@ -49,14 +56,16 @@ export default function Works() {
                   </div>
                   <h2>{d.title}</h2>
                   <p>{d.desc}</p>
-                  <span>Projects</span>
+                  <span
+                    onClick={() => window.open(projectUrls[d.id], "_blank")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Visit here -
+                  </span>
                 </div>
               </div>
               <div className="right">
-                <img
-                  src={d.img}
-                  alt=""
-                />
+                <img src={d.img} alt="" />
               </div>
             </div>
           </div>

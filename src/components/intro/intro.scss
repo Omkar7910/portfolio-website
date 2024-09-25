@@ -4,8 +4,7 @@
   background-color: $secondaryColor;
   display: flex;
 
-
-  @include mobile{
+  @include mobile {
     flex-direction: column;
     align-items: center;
   }
@@ -24,19 +23,20 @@
       justify-content: center;
       float: right;
 
-      @include mobile{
+      @include mobile {
         align-items: flex-start;
       }
 
       img {
         height: 90%;
 
-        @include mobile{
+        @include mobile {
           height: 50%;
         }
       }
     }
   }
+
   .right {
     flex: 0.5;
     position: relative;
@@ -58,17 +58,19 @@
         font-size: 60px;
         margin: 10px 0;
 
-        @include mobile{
+        @include mobile {
           font-size: 40px;
         }
       }
+
       h2 {
         font-size: 35px;
       }
+
       h3 {
         font-size: 30px;
 
-        @include mobile{
+        @include mobile {
           font-size: 20px;
         }
 
@@ -77,20 +79,47 @@
           color: $primaryColor;
         }
       }
-    }
-    a {
-      position: absolute;
-      bottom: 10px;
-      left: 40%;
 
-      img {
-        width: 30px;
-        animation: arrowBlink 2s infinite;
+      .buttons {
+        margin-top: 20px;
+
+        button {
+          background-color: $primaryColor;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          margin-right: 10px;
+          cursor: pointer;
+          border-radius: 2rem;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: darken($primaryColor, 10%);
+          }
+        }
       }
+      .socials {
+        margin-top: 20px;
+        margin-left: 75px;
+        display: flex;
+        justify-content: left;
+        gap: 1rem;
 
-      @keyframes arrowBlink {
-        100% {
-          opacity: 0;
+        @include mobile {
+          margin-right: 4.5rem;
+        }
+
+        a {
+          margin-right: 10px;
+
+          img {
+            width: 40px;
+            transition: transform 0.3s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
         }
       }
     }

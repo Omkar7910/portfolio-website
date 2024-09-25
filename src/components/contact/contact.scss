@@ -1,80 +1,212 @@
 @import "../../global.scss";
 
-.contact {
+#contact {
   background-color: $secondaryColor;
-  display: flex;
 
-  @include mobile {
-    flex-direction: column;
+  .section__text__p1 {
+    margin-top: 3rem;
+    font-size: 1rem;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+      margin-top: 2rem;
+    }
   }
 
-  .left {
-    flex: 1;
+  .title {
+    font-size: 3rem;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
+  }
+
+  .contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border: 0.1rem solid rgb(163, 163, 163);
+    background-color: $secondaryColor;
+    margin: 4rem auto;
+    padding: 0.5rem;
+    width: 100%; /* Make it fluid */
+    max-width: 452px;
+    height: auto; /* Allow height to adjust based on content */
     overflow: hidden;
 
-    img {
-      height: 100%;
+    @media (max-width: 768px) {
+      margin: 2rem auto;
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      margin: 1.5rem auto;
+      padding: 0.5rem;
+      border-radius: 1rem;
+    }
+
+    .contact-info-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem;
+      text-align: center;
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .contact-info-container p {
+        font-size: larger;
+
+        @media (max-width: 480px) {
+          font-size: medium;
+        }
+      }
+
+      .icon.contact-icon,
+      .icon.contact-icon.email-icon {
+        width: 40px;
+        height: 40px;
+
+        @media (max-width: 480px) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #000;
+        font-size: 19.2px;
+        margin-bottom: 10px;
+
+        &:hover {
+          border-bottom: 1px solid $mainColor;
+          font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+        }
+      }
     }
   }
-  .right {
-    flex: 1;
+}
+
+nav {
+  margin-top: 10%;
+
+  @media (max-width: 768px) {
+    margin-top: 5%;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 2%;
+  }
+
+  .nav-links-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    background: linear-gradient(
+      90deg,
+      $secondaryColor,
+      darken($secondaryColor, 10%)
+    );
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 
-    h2 {
-      font-size: 30px;
+    @media (max-width: 768px) {
+      padding: 1rem;
     }
 
-    form {
-      width: 70%;
-      height: 70%;
+    @media (max-width: 480px) {
+      padding: 0.5rem;
+    }
+
+    .nav-links {
+      list-style: none;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
 
-      input {
-        width: 300px;
-        height: 30px;
-        font-size: 14px;
-
-        @include mobile {
-          width: 200px;
-          height: 20px;
-        }
+      @media (max-width: 768px) {
+        gap: 1.5rem;
       }
 
-      textarea {
-        width: 300px;
-        height: 200px;
-        font-size: 14px;
-
-        @include mobile {
-          width: 200px;
-          height: 100px;
-        }
+      @media (max-width: 480px) {
+        gap: 1rem;
       }
 
-      button {
-        width: 150px;
-        height: 30px;
-        color: white;
-        background-color: $primaryColor;
-        border: none;
-        border-radius: 10px;
-        font-weight: 500;
-        cursor: pointer;
+      li {
+        a {
+          text-decoration: none;
+          color: $primaryColor;
+          font-size: 1.6rem;
+          font-weight: 600;
+          letter-spacing: 0.05rem;
+          transition: color 0.3s ease;
 
-        &:focus {
-          outline: none;
+          @media (max-width: 768px) {
+            font-size: 1.4rem;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1.2rem;
+          }
+
+          &:hover {
+            color: $mainColor;
+          }
         }
-      }
 
-      span {
-        color: green;
+        &:hover {
+          border-bottom: 1px solid $mainColor;
+        }
       }
     }
+  }
+}
+
+p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken(#6c757d, 10%);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
   }
 }
