@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./works.scss";
 
 export default function Works() {
-  const [projectUrls, setProjectUrls] = useState({
+  const [projectUrls] = useState({
     1: "https://flix2go.netlify.app",
     2: "https://newsglobeog.netlify.app",
   });

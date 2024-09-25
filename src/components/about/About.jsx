@@ -8,20 +8,12 @@ export default function About() {
       <h1 className="title">About Me</h1>
       <div className="section-container">
         <div className="section__pic-container">
-          <img
-            src="./assets/myimagenew.jpeg"
-            alt="Profile picture"
-            className="about-pic"
-          />
+          <img src="./assets/myimagenew.jpeg" alt="" className="about-pic" />
         </div>
         <div className="about-details-container">
           <div className="about-containers">
             <div className="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                className="icon"
-              />
+              <img src="./assets/education.png" alt="" className="icon" />
               <h3>Education</h3>
               <p>
                 B.C.A Bachelors Degree
@@ -32,11 +24,12 @@ export default function About() {
           </div>
           <div className="text-container">
             <p>
-              Hello there, I am Omkar Patil an enthusiastic frontend developer, I have a deep passion for
-              crafting visually appealing, user-friendly web interfaces. My
-              focus has been on mastering the essentials of frontend
-              development, especially using ReactJS, where I continuously
-              explore new ways to enhance the user experience.
+              Hello there, I am Omkar Patil an enthusiastic frontend developer,
+              I have a deep passion for crafting visually appealing,
+              user-friendly web interfaces. My focus has been on mastering the
+              essentials of frontend development, especially using ReactJS,
+              where I continuously explore new ways to enhance the user
+              experience.
             </p>
           </div>
         </div>
