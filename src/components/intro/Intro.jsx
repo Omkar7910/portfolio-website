@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 export default function Intro() {
   const downloadCV = () => {
     // Replace the URL with the actual path to your CV file
-    window.location.href = "assets/resume.pdf";
+    window.location.href = "assets/Omkar_resume.pdf";
   };
 
   return (
@@ -42,7 +42,11 @@ export default function Intro() {
             </button>
           </div>
           <div className="socials">
-            <a href="https://www.linkedin.com/in/omkar-patil-75793022a" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/omkar-patil-75793022a"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="assets/linkedin.png" alt="LinkedIn" />
             </a>
             <a
