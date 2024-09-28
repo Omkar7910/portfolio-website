@@ -4,7 +4,7 @@ import "./works.scss";
 export default function Works() {
   const [projectUrls] = useState({
     1: "https://flix2go.netlify.app",
-    2: "https://newsglobeog.netlify.app",
+    2: "https://thedailyglobe.netlify.app",
   });
 
   const [currentSlide, setCurrentSlide] = useState(0);
