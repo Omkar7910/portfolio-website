@@ -3,66 +3,86 @@
 #experience {
   background-color: $secondaryColor;
   overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2rem; // Add top padding to create space
+
+  .experience-content {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem; // Add horizontal padding
+  }
 
   .section__text__p1 {
-    font-size: 1.25rem;
+    font-size: clamp(0.875rem, 2.5vw, 1.25rem);
     color: black;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem; // Add bottom margin
     text-align: center;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     color: $mainColor;
-    margin: 2rem 0;
+    margin: 1rem 0 2rem; // Increase bottom margin
     text-align: center;
+    line-height: 1.2;
   }
 
   .experience-details-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 1rem; // Add top margin
   }
 
+  // Rest of the CSS remains unchanged
   .about-containers {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
   }
 
   .details-container {
-    align-items: center;
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
     text-align: center;
-    flex: 1;
   }
 
   h2 {
-    padding: 1rem;
+    padding: 0.75rem;
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
   }
 
   .article-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    gap: 1rem; /* Adjust the gap between skills */
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
   }
 
   article {
-    flex: 1 1 200px;
+    flex: 1 1 calc(25% - 0.75rem);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 10px;
-    background-color: $secondaryColor;
+    background-color: lighten($secondaryColor, 5%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    margin-bottom: 1rem; /* Add margin between articles */
+    margin-bottom: 0.75rem;
+    max-width: calc(25% - 0.75rem);
 
     &:hover {
       transform: scale(1.05);
@@ -70,82 +90,142 @@
   }
 
   .icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 1rem;
+    width: clamp(20px, 5vw, 30px);
+    height: clamp(20px, 5vw, 30px);
+    margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: clamp(0.75rem, 2vw, 1rem);
     color: #555;
     text-align: center;
   }
 
   /* Media queries for responsiveness */
-  @media (max-width: 1024px) {
-    .title {
-      font-size: 2.5rem;
+  @media (max-width: 1200px) {
+    .details-container {
+      flex: 1 1 100%;
+      max-width: 100%;
     }
-    .experience-details-container {
-      gap: 1.5rem;
-    }
-    .about-containers {
-      flex-direction: column;
-      gap: 1rem;
+
+    article {
+      flex: 1 1 calc(33.33% - 0.75rem);
+      max-width: calc(33.33% - 0.75rem);
     }
   }
 
   @media (max-width: 768px) {
-    .title {
-      font-size: 2rem;
+    padding-top: 1.5rem; // Adjust top padding for smaller screens
+
+    .experience-content {
+      max-width: 90%;
     }
-    .section__text__p1 {
-      font-size: 1.125rem;
+
+    .experience-details-container {
+      gap: 1.25rem;
     }
-    .article-container {
-      gap: 0.5rem;
+
+    .about-containers {
+      flex-direction: column;
+      align-items: center;
     }
+
+    .details-container {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
     article {
-      flex: 1 1 150px;
-      padding: 0.875rem; /* Adjust padding for smaller screens */
+      flex: 1 1 calc(50% - 0.75rem);
+      max-width: calc(50% - 0.75rem);
     }
   }
 
   @media (max-width: 480px) {
-    .title {
-      font-size: 1.75rem;
+    padding-top: 1rem; // Further adjust top padding for mobile
+
+    .experience-content {
+      max-width: 90%;
+      min-width: 80vh;
     }
+
     .section__text__p1 {
-      font-size: 1rem;
+      font-size: 0.875rem;
+      margin: 0;
+      padding: 1rem;
     }
+
+    .title {
+      font-size: 1.5rem;
+      margin: 0;
+      padding-bottom: 0.75rem;
+    }
+
+    .experience-details-container {
+      gap: 1rem;
+      margin-top: 0.5rem; // Reduce top margin for mobile
+    }
+
+    .article-container {
+      gap: 0.5rem;
+    }
+
     article {
       flex: 1 1 100%;
-      padding: 0.75rem;
+      max-width: 90%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
     }
+
+    h2 {
+      padding: 0.5rem;
+      font-size: 1.125rem;
+    }
+
     p {
-      font-size: 0.875rem;
-    }
-    .icon {
-      width: 25px;
-      height: 25px;
-    }
-    .experience-details-container {
-      gap: 1rem; /* Adjust gap for mobile screens */
+      font-size: 0.75rem;
     }
   }
 
   @media (max-width: 360px) {
-    .title {
-      font-size: 1.5rem;
+    padding-top: 0.75rem; // Adjust top padding for very small screens
+
+    .experience-content {
+      max-width: 100%;
+      padding: 0 0.5rem; // Reduce horizontal padding
     }
+
     .section__text__p1 {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
+      padding-bottom: 0.6rem;
+      margin: 0;
     }
+
+    .title {
+      font-size: 1.25rem;
+      margin: 0;
+      padding: 0.75rem; // Further adjust margin for very small screens
+    }
+
+    .experience-details-container {
+      margin-top: 0.25rem; // Reduce top margin for very small screens
+    }
+
+    .article-container {
+      gap: 0.375rem;
+    }
+
     article {
-      padding: 0.5rem;
+      padding: 0.375rem;
     }
+
+    h2 {
+      padding: 0.375rem;
+      font-size: 1rem;
+    }
+
     p {
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
     }
   }
 }

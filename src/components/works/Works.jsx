@@ -13,28 +13,21 @@ export default function Works() {
       id: "1",
       icon: "./assets/globe.png",
       title: "Flix2Go",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: "https://github.com/user-attachments/assets/79717fb1-214d-4c10-97bc-4fdbaa4ce52d?auto=format&q=60&fit=max&w=930",
+      desc: "A responsive React web app with dynamic movie displays, real-time API, and seamless navigation.",
+      img: "https://github.com/user-attachments/assets/79717fb1-214d-4c10-97bc-4fdbaa4ce52d?auto=format&format=webp&q=50&fit=max&w=930",
     },
     {
       id: "2",
       icon: "./assets/globe.png",
       title: "DailyGlobe",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      desc: "Developed a React app fetching stories from Hacker News API, with real-time search, and managed state using Context API and useReducer.",
       img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
     },
-    // {
-    //   id: "3",
-    //   icon: "./assets/writing.png",
-    //   title: "Branding",
-    //   desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    //   img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
-    // },
   ];
 
   const handleClick = (way) => {
     way === "left"
-      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 1)
       : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
@@ -54,18 +47,28 @@ export default function Works() {
                   <div className="imgContainer">
                     <img src={d.icon} alt="" />
                   </div>
-                  <h2>{d.title}</h2>
+                  <h2
+                    onClick={() => window.open(projectUrls[d.id], "_blank")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {d.title}
+                  </h2>
                   <p>{d.desc}</p>
                   <span
                     onClick={() => window.open(projectUrls[d.id], "_blank")}
                     style={{ cursor: "pointer" }}
                   >
-                    Visit here -
+                    Live Link -
                   </span>
                 </div>
               </div>
               <div className="right">
-                <img src={d.img} alt="" />
+                <img
+                  onClick={() => window.open(projectUrls[d.id], "_blank")}
+                  style={{ cursor: "pointer" }}
+                  src={d.img}
+                  alt=""
+                />
               </div>
             </div>
           </div>

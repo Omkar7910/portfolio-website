@@ -2,33 +2,40 @@ import React from "react";
 import "./contact.scss";
 
 export default function Contact() {
-  
-
   return (
     <section id="contact">
       <p className="section__text__p1">Get in Touch</p>
       <h1 className="title">Contact Me</h1>
       <div className="contact-info-upper-container">
         <div className="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            className="icon contact-icon email-icon"
-          />
+          <a href="mailto:omkarpatil2.0@outlook.com">
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              className="icon contact-icon email-icon"
+            />
+          </a>
           <p>
-            <a href="https://mail.google.com/mail/u/0/#inbox">
-              yourmail@gmail.com
-            </a>
+            <a href="mailto:omkarpatil2.0@outlook.com">omkarpatil2.0@out.com</a>
           </p>
         </div>
         <div className="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            className="icon contact-icon"
-          />
+          <a
+            href="https://www.linkedin.com/in/omkar-patil-75793022a"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/linkedin.png"
+              alt="LinkedIn icon"
+              className="icon contact-icon"
+            />
+          </a>
+
           <p>
-            <a href="https://www.linkedin.com">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/omkar-patil-75793022a">
+              LinkedIn
+            </a>
           </p>
         </div>
       </div>
@@ -51,7 +58,9 @@ export default function Contact() {
             </ul>
           </div>
         </nav>
-        <p>Copyright &#169; 2024 Omkar Patil. All Rights Reserved.</p>
+        <div className="footer-container">
+          <p>Copyright &#169; 2024 Omkar Patil. All Rights Reserved.</p>
+        </div>
       </>
     </section>
   );

@@ -2,160 +2,164 @@
 
 #about {
   background-color: $primaryColor;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 
   .section__text__p1 {
-    font-size: 1.25rem;
+    font-size: clamp(0.75rem, 2vw, 1.25rem);
     color: #fff;
-    margin-top: 3rem;
+    margin-top: 0.5rem;
     text-align: center;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 4vw, 3rem);
     color: $secondaryColor;
-    margin: 2rem 0;
+    margin: 0.5rem 0;
     text-align: center;
   }
 
   .section-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem;
-    gap: 2rem;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .section__pic-container {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .about-pic {
-    width: 100%;
+    width: clamp(100px, 25vw, 200px);
+    height: clamp(100px, 25vw, 200px);
     object-fit: cover;
-    max-width: 300px;
+    object-position: center top;
     border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .about-details-container {
-    flex: 2;
-    padding: 2rem;
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
     background-color: $secondaryColor;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .about-containers {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 2rem;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .details-container {
     text-align: center;
-    flex: 1;
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 120px;
     .icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 1rem;
+      width: clamp(24px, 5vw, 40px);
+      height: auto;
+      margin-bottom: 0.5rem;
     }
     p {
-      padding: 1rem;
+      padding: 0.25rem;
       margin: 0;
-      font-size: 1rem;
+      font-size: clamp(0.7rem, 1.5vw, 1rem);
       color: #555;
       text-align: center;
     }
-  }
-
-  .icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 1rem;
   }
 
   .text-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     p {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: clamp(0.8rem, 2vw, 1.1rem);
       color: #555;
       text-align: center;
     }
   }
 
-  /* Responsive Design */
-  @media only screen and (max-width: 1024px) {
-    .section__pic-container,
+  @media only screen and (min-width: 768px) {
+    .section-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .section__pic-container {
+      flex: 0 0 auto;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+
     .about-details-container {
       flex: 1;
     }
+  }
 
-    .about-pic {
-      max-width: 250px;
+  @media only screen and (max-width: 767px) {
+    .about-containers {
+      flex-direction: column;
+      align-items: center;
     }
 
-    .about-details-container {
-      padding: 1.5rem;
-    }
-
-    .title {
-      font-size: 2.5rem;
-    }
-
-    .section__text__p1 {
-      font-size: 1.1rem;
+    .details-container {
+      flex-basis: 100%;
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-height: 700px) and (max-width: 767px) {
+    .section__text__p1,
     .title {
-      font-size: 2rem;
+      margin: 0.25rem 0;
     }
 
     .about-pic {
-      max-width: 200px;
+      width: clamp(80px, 20vw, 150px);
+      height: clamp(80px, 20vw, 150px);
     }
 
     .about-details-container {
-      padding: 1rem;
-    }
-
-    .section-container {
-      padding: 1rem;
-      gap: 1rem;
+      padding: 0.75rem;
     }
 
     .about-containers {
-      flex-direction: column;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    .title {
-      font-size: 1.75rem;
-    }
-
-    .section__text__p1 {
-      font-size: 1rem;
-    }
-
-    .about-pic {
-      max-width: 150px;
-    }
-
-    .about-details-container {
-      padding: 0.5rem;
-    }
-
-    .section-container {
-      padding: 0.5rem;
+      margin-bottom: 0.5rem;
       gap: 0.5rem;
+    }
+
+    .details-container {
+      .icon {
+        width: clamp(20px, 4vw, 32px);
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: clamp(0.6rem, 1.4vw, 0.9rem);
+        padding: 0.1rem;
+      }
+    }
+
+    .text-container {
+      margin-bottom: 0.5rem;
+      p {
+        font-size: clamp(0.7rem, 1.6vw, 1rem);
+      }
     }
   }
 }
